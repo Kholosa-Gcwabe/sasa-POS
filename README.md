@@ -9,13 +9,6 @@ Upgrade for the Sasa Restaurant POS. Same Supabase project, same staff, same dat
 - **Sign-in log.** The Activity screen now shows who signed in, whether by password or QR card, and who was signed out for being idle.
 - Closing the browser tab now signs the person out, so a shared till is never left signed in.
 
-## How to upgrade (about 10 minutes)
-1. **Database.** Supabase, SQL Editor, paste all of `schema_v3.sql`, Run. Once only.
-2. **Update the create-staff function.** Edge Functions, open `create-staff`, replace all the code with the contents of `create-staff.ts`, Deploy.
-3. **Add the qr-login function.** Edge Functions, Deploy a new function, Via Editor. Name it exactly `qr-login`, paste in `qr-login.ts`, Deploy. Then open its settings and switch **Verify JWT off**. Nobody is signed in yet when they scan, so this has to be off or scanning fails.
-4. **App files.** Replace `app.js`, `index.html` and `style.css`. Keep your own `config.js` and `logo.png`. Refresh with Ctrl+F5.
-5. **Cards for existing staff.** Staff screen, press **Make QR card** next to each person (including yourself). New logins get their card automatically.
-
 ## Good to know
 - **A QR card is a key.** Anyone holding it can sign in as that person. Hand it over privately, and press **New QR card** if one is lost. The old card stops working straight away. Disabling a staff member blocks both their password and their card.
 - **The card is shown once.** Only a scrambled fingerprint of the code is stored, so not even you can look it up later. That is why a lost card is replaced rather than recovered.
