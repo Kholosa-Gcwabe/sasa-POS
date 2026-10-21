@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sasa POS</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="login-screen" class="screen">
+    <div class="login-card">
+      <div class="brand-big">
+        <img id="login-logo" class="logo-img" src="logo.png" alt="">
+        <h1 id="login-title">Sasa Restaurant</h1>
+        <p id="login-tagline">Staff sign in</p>
+      </div>
+      <div class="seg" id="login-mode">
+        <button type="button" data-mode="type" class="on">Type</button>
+        <button type="button" data-mode="scan">Scan QR card</button>
+      </div>
+
+      <form id="login-form" class="login-form" autocomplete="on">
+        <label>Username
+          <input id="username" type="text" autocomplete="username" autocapitalize="none" required>
+        </label>
+        <label>Password
+          <input id="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+      <div id="scan-panel" class="login-form hidden">
+        <div id="scan-box" class="scan-box">
+          <video id="scan-video" playsinline muted></video>
+          <div class="scan-frame"></div>
+          <div class="scan-idle">Camera is off</div>
+        </div>
+        <p id="scan-status" class="scan-status muted">Press Start camera, then hold your QR card up to it.</p>
+        <button id="scan-start" class="btn btn-primary btn-block" type="button">Start camera</button>
+        <label class="btn btn-outline btn-block">Scan from a photo
+          <input id="scan-file" type="file" accept="image/*" hidden>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section id="app-screen" class="screen hidden">
+    <header class="app-header">
+      <div class="brand"><img id="brand-logo" class="brand-logo" src="logo.png" alt=""><strong id="brand-name">Sasa POS</strong></div>
+      <nav id="nav"></nav>
+      <div class="user">
+        <span id="who"></span>
+        <button id="logout" class="btn btn-ghost" type="button">Log out</button>
+      </div>
+    </header>
+    <main id="view"></main>
+  </section>
+
+  <div id="toasts" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
