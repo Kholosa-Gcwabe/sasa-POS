@@ -1,3 +1,4 @@
+require('dotenv').config();
 // Playwright config for Sasa POS.
 // The app is static files, so a tiny local server is enough.
 const { defineConfig, devices } = require('@playwright/test');
