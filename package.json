@@ -1,0 +1,28 @@
+{
+  "name": "sasa-pos",
+  "version": "1.0.0",
+  "description": "Upgrade for the Sasa Restaurant POS. Same Supabase project, same staff, same data.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kholosa-Gcwabe/sasa-POS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Kholosa-Gcwabe/sasa-POS/issues"
+  },
+  "homepage": "https://github.com/Kholosa-Gcwabe/sasa-POS#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "http-server": "^14.1.1"
+  }
+}
